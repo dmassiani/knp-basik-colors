@@ -1,0 +1,28 @@
+@import neat-helpers
+
+// Adding a Visual Grid while you develop. Set to 'true.'
+$visual-grid: false
+$visual-grid-color: #ccc
+$visual-grid-index: front
+$visual-grid-opacity: 0.2
+
+// Change the grid settings
+$column: 90px
+$gutter: 30px
+$grid-columns: 12
+$max-width: em(1000)
+
+// Breakpoints
+$sm: new-breakpoint(min-width 200px 4)
+$smbg: new-breakpoint(min-width 480px 4)
+$md: new-breakpoint(min-width 768px 6)
+$hg: new-breakpoint(min-width 1140px 12)
+
+// Neat Breakpoints
+$nano-screen: em(420)
+$small-screen: em(640)
+$medium-screen: em(860)
+$large-screen: em(1200)
+
+$medium-screen-up: new-breakpoint(min-width $medium-screen 4)
+$large-screen-up: new-breakpoint(min-width $large-screen 8)

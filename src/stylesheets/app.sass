@@ -1,2 +1,65 @@
 @import normalize
 @import base/mixins
+
+@import bourbon
+@import settings/grid
+@import neat
+@import settings/color
+@import skins/sassycolours
+@import skins/dominos
+@import skins/ucar
+
+
+$padding: $gutter * 2
+$configurator-width: em(200px)
+$header-height: 80px
+
+@import components/sidebar
+@import components/breadcrumb
+@import components/product
+@import components/buttons
+
+html,
+body
+	margin: 0
+	padding: 0
+	font-family: 'Lato', sans-serif
+
+h1,h2,h3,h4,h5
+	font-family: 'Roboto', sans-serif
+a
+	text-decoration: none
+
+.container
+	padding: $header-height
+
+.header
+	background: white
+	height: $header-height
+	position: fixed
+	top: 0
+	width: 100%
+	z-index: 9
+	h1
+		margin: 0
+		margin-left: $padding
+		margin-top: 20px
+		text-transform: uppercase
+		font-weight: 900
+
+
+.breadcrumb
+	&._wrapper
+		+outer-container
+
+.main
+	+outer-container( $max-width - $configurator-width )
+	background: white;
+	padding: $padding
+	position: relative
+	left: -$configurator-width / 2
+
+ul, ol
+	list-style: none
+	margin: 0
+	padding: 0

@@ -7,5 +7,72 @@
 {% extends 'layouts/application.html' %}
 
 {% block content %}
-  <h1 data-module="example">Hello World!</h1>
+
+	<!-- {% include "data/colors.html" %} -->
+
+	<header class="header">
+		<h1 class="-color-light-x">Basik</h1>
+	</header>
+
+	<div class="container">
+		
+		<div class="breadcrumb _wrapper -color-light-x">
+			<ul class="breadcrumb _container">
+				<li class="breadcrumb _item">
+					<a href="#">Produits permanents</a>
+				</li>
+				<li class="breadcrumb _item">
+					<a href="#">En stock</a>
+				</li>
+				<li class="breadcrumb _item -active">
+					<a href="#">Affiche saint-valentin</a>
+				</li>
+			</ul>
+		</div>
+
+		<main class="main">
+
+			<header class="product _header">
+				<div class="product _type">
+					3400 en stock
+				</div>
+				<div class="product _price">
+					<h2 class="-color-darker">1200€</h2>
+					<span class="-color-light-xxx">Grille tarifaire</span>
+				</div>
+			</header>
+
+			<div class="product _title -color-light-xx">
+				<h2>Affiche saint-valentin</h2>
+			</div>
+
+			<figure class="product _illustration -bg-light-xxx">
+				illustration
+			</figure>
+
+			<div class="product _tagline">
+				<ol class="-color-light-xx">
+					<li>tag</li>
+					<li>tag</li>
+					<li>tag</li>
+					<li>tag</li>
+				</ol>
+			</div>
+
+			<section class="product _descriptif -color-light-xx">
+				{% include "data/lorem.html" %}
+			</section>
+
+			<div class="product _configurator -bg-light-xx">
+				<button class="button _wrapper -secondary -bg-secondary">
+					Ajouter au panier
+				</button>
+			</div>
+
+		</main>
+
+	</div>
+
+
 {% endblock %}
+

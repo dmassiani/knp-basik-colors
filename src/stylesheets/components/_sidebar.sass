@@ -1,0 +1,55 @@
+$sidebar-width: 300px
+
+.sidebar
+	&._wrapper
+		height: 100vh
+		position: fixed
+		top: 0
+		right: -$sidebar-width
+		width: $sidebar-width
+		z-index: 10
+
+	&._header
+		position: relative
+		height: $header-height
+		left: -$sidebar-width
+
+	&._toggler
+		position: absolute
+		right: 0
+		height: 100%
+		width: $header-height
+		text-align: center
+
+	&._inner
+		padding: $gutter/2
+		overflow: hidden
+		overflow-y: auto
+		+transform(translateX($sidebar-width))
+		+transition( all .4s ease-in-out)
+
+	&._footer
+		text-align: center
+		position: fixed
+		bottom: 0
+		width: $sidebar-width
+		padding: $gutter 0
+
+	.basket
+		&._item
+			width: 100%
+			height: 100px
+			border-radius: 4px
+			display: block
+			margin-top: 4px
+			box-shadow: 0px 1px 0px rgba(0,0,0,.3)
+
+	// states
+	
+	&.-active
+		right: 0
+		._header
+			left: 0
+		.sidebar._inner
+			// left: 0
+			+transform(translateX(0))
