@@ -1,0 +1,127 @@
+/**
+ * Base color
+ * @type {HEX}
+ */
+$base-color: #e50044
+
+$darken-color: shade( $base-color, 20% )
+
+$light-color-x: tint( $base-color, 10% )
+$light-color-xx: tint( $base-color, 30% )
+$light-color-xxx: tint( $base-color, 50% )
+$light-color-xxxx: tint( $base-color, 90% )
+
+$background-color: desaturate($light-color-xxxx, 80% )
+$text-color: desaturate($base-color, 40% )
+$text-color-x: desaturate( darken($text-color, 0% ), 50% )
+$text-color-xx: desaturate( darken($text-color, 10% ), 60% )
+$text-color-xxx: desaturate( darken($text-color, 15% ), 80% )
+
+$primary-color: #FFA94F
+
+// https://github.com/chrisasher/sassycolours
+// mono, compound, complement, split, triad, triad2, analog, analog2
+$colour: sassycolours($base-color, 'analog2')
+
+.eram
+
+	/**
+	 * BG Body
+	 */
+	.-bg,
+	&.-bg
+		background: $background-color
+
+	.-bg-sidebar,
+	&.-bg-sidebar
+		background: $text-color-x
+
+	.-bg-sidebar-item,
+	&.-bg-sidebar-item
+		background: $text-color-xxx
+
+	/**
+	 * Darker color based on base color
+	 */
+	.-bg-darker
+		background: $darken-color
+
+	/**
+	 * Base color
+	 */
+	.-bg-base
+		background: $base-color
+
+	/**
+	 * Light color force x
+	 */
+	.-bg-light-x
+		background: $light-color-x
+	.-bg-light-xx
+		background: $light-color-xx
+	.-bg-light-xxx
+		background: $light-color-xxx
+	.-bg-light-xxxx,
+	&.-bg-light-xxxx
+		background: $light-color-xxxx
+
+
+	/**	
+	 * Primary and secondary
+	 */
+	.-bg-primary
+		background: saturate( tint( nth($colour, 2), 40% ), 40% )
+	.-bg-secondary
+		// background: saturate( tint( nth($colour, 3), 20% ), 40% )
+		background: $text-color-xxx
+		color: white
+
+	/**
+	 * Darker color based on base color
+	 */
+	.-color-darker
+		color: $darken-color
+
+	/**
+	 * Base color
+	 */
+	.-color-base,
+	.-color-base a
+		color: $text-color
+
+	.-color-x,
+	.-color-x a
+		color: $text-color-x
+
+	.-color-xx,
+	.-color-xx a
+		color: $text-color-xx
+
+	/**
+	 * Light color force x
+	 */
+	.-color-light-x,
+	.-color-light-x a
+		color: $light-color-x
+	.-color-light-xx,
+	.-color-light-xx a
+		color: $light-color-xx
+	.-color-light-xxx,
+	.-color-light-xxx a
+		color: $light-color-xxx
+	.-color-light-xxxx,
+	.-color-light-xxxx a
+		color: $light-color-xxxx
+
+
+	/**	
+	 * Primary and secondary
+	 */
+	.-color-primary,
+	.-color-primary a
+		color: $primary-color
+	.-color-secondary,
+	.-color-secondary a
+		color: nth($colour, 3)
+
+
