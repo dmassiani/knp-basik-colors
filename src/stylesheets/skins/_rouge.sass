@@ -13,9 +13,9 @@ $light-color-xxxx: tint( $base-color, 90% )
 
 $background-color: desaturate($light-color-xxxx, 80% )
 $text-color: desaturate($base-color, 40% )
-$text-color-x: desaturate( darken($text-color, 10% ), 40% )
-$text-color-xx: desaturate( darken($text-color, 20% ), 60% )
-$text-color-xxx: desaturate( darken($text-color, 30% ), 80% )
+$text-color-x: desaturate( darken($text-color, 0% ), 50% )
+$text-color-xx: desaturate( darken($text-color, 10% ), 60% )
+$text-color-xxx: desaturate( darken($text-color, 15% ), 80% )
 
 $primary-color: #FFA94F
 
@@ -34,7 +34,7 @@ $colour: sassycolours($base-color, 'analog2')
 
 	.-bg-sidebar,
 	&.-bg-sidebar
-		background: $text-color-xx
+		background: $text-color-x
 
 	.-bg-sidebar-item,
 	&.-bg-sidebar-item

@@ -31,10 +31,18 @@ require.ensure([], function() {
 
 		// change Skin event
 		$(document).on('changeSkin', function(e){
+
 			let skin = $('body').attr('class').split(' ').pop()
 			if( skin != '-bg' )
 				$('body').removeClass(skin)
 			$('body').addClass($('body').data('skin'))
+
+			if( $('body').data('skin') === 'dominos' ){
+				$('header.header h1').text('').append('<img src="images/dominos.png"/>')
+			}else{
+				$('header.header h1').text('Basik').parent().find('img').remove()
+			}
+
 		})
 
 	})
