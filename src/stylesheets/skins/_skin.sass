@@ -1,4 +1,13 @@
-$base-color: #615D58
+/**
+ * Base color
+ * @type {HEX}
+ */
+$base-color: #19A974
+$base-color: #357EDD
+// $base-color: #FFB700
+// $base-color: #9EEBCF
+// $base-color: #00449E
+// $base-color: #E7040F
 
 $darken-color: shade( $base-color, 20% )
 
@@ -7,12 +16,34 @@ $light-color-xx: tint( $base-color, 30% )
 $light-color-xxx: tint( $base-color, 50% )
 $light-color-xxxx: tint( $base-color, 90% )
 
+$background-color: desaturate($light-color-xxxx, 80% )
+$text-color: desaturate($base-color, 40% )
+$text-color-x: desaturate( darken($text-color, 10% ), 40% )
+$text-color-xx: desaturate( darken($text-color, 20% ), 60% )
+$text-color-xxx: desaturate( darken($text-color, 30% ), 80% )
+
 $primary-color: #FFA94F
 
 // https://github.com/chrisasher/sassycolours
-$colour: sassycolours($base-color, 'split')
+// mono, compound, complement, split, triad, triad2, analog, analog2
+$colour: sassycolours($base-color, 'analog2')
 
 .ucar
+
+	/**
+	 * BG Body
+	 */
+	.-bg,
+	&.-bg
+		background: $background-color
+
+	.-bg-sidebar,
+	&.-bg-sidebar
+		background: $text-color-xx
+
+	.-bg-sidebar-item,
+	&.-bg-sidebar-item
+		background: $text-color-xxx
 
 	/**
 	 * Darker color based on base color
@@ -44,9 +75,11 @@ $colour: sassycolours($base-color, 'split')
 	 * Primary and secondary
 	 */
 	.-bg-primary
-		background: $primary-color
+		background: saturate( tint( nth($colour, 2), 40% ), 40% )
 	.-bg-secondary
-		background: tint( nth($colour, 3), 20% )
+		// background: saturate( tint( nth($colour, 3), 20% ), 40% )
+		background: $text-color-xxx
+		color: white
 
 	/**
 	 * Darker color based on base color
@@ -59,7 +92,15 @@ $colour: sassycolours($base-color, 'split')
 	 */
 	.-color-base,
 	.-color-base a
-		color: $base-color
+		color: $text-color
+
+	.-color-x,
+	.-color-x a
+		color: $text-color-x
+
+	.-color-xx,
+	.-color-xx a
+		color: $text-color-xx
 
 	/**
 	 * Light color force x
@@ -87,3 +128,5 @@ $colour: sassycolours($base-color, 'split')
 	.-color-secondary,
 	.-color-secondary a
 		color: nth($colour, 3)
+
+

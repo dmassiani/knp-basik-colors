@@ -5,14 +5,14 @@ $sidebar-width: 300px
 		height: 100vh
 		position: fixed
 		top: 0
-		right: -$sidebar-width
+		right: 0
 		width: $sidebar-width
 		z-index: 10
 
 	&._header
 		position: relative
 		height: $header-height
-		left: -$sidebar-width
+		left: 0
 
 	&._toggler
 		position: absolute
@@ -25,8 +25,8 @@ $sidebar-width: 300px
 		padding: $gutter/2
 		overflow: hidden
 		overflow-y: auto
-		+transform(translateX($sidebar-width))
-		+transition( all .4s ease-in-out)
+		height: 100%
+		+transition( transform .3s ease-in-out)
 
 	&._footer
 		text-align: center
@@ -34,6 +34,7 @@ $sidebar-width: 300px
 		bottom: 0
 		width: $sidebar-width
 		padding: $gutter 0
+		+transition( transform .3s ease-in-out)
 
 	.basket
 		&._item
@@ -48,8 +49,9 @@ $sidebar-width: 300px
 	
 	&.-active
 		right: 0
-		._header
-			left: 0
-		.sidebar._inner
-			// left: 0
-			+transform(translateX(0))
+		.sidebar
+			&._header
+				left: 0
+			&._inner,
+			&._footer
+				+transform( translateX($sidebar-width) )
